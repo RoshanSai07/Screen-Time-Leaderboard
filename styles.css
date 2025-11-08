@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background: #fafafa;
+  color: #1a1a1a;
+}
+
+.leaderboard {
+  width: 35%;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.leaderboard h2 {
+  color: #1a1a1a;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+}
+
+.entries {
+  flex: 1;
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+}
+
+.entries::-webkit-scrollbar {
+  width: 4px;
+}
+
+.entries::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.entries::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.entries::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.entry:last-child {
+  border-bottom: none;
+}
+
+.entry.recent {
+  background: #f8f9ff;
+  border-left: 3px solid #667eea;
+  padding-left: 10px;
+  margin-left: -10px;
+  animation: highlightFade 2s ease-in;
+}
+
+@keyframes highlightFade {
+  from {
+    background: #e3e6ff;
+  }
+  to {
+    background: #fff;
+  }
+}
+
+.entry-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entry-number {
+  font-weight: 600;
+  color: #667eea;
+  margin-right: 12px;
+  min-width: 25px;
+}
+
+.name {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.time {
+  color: #666;
+  font-size: 0.95em;
+}
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  color: #999;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 60px;
+}
+
+.delete-btn:hover {
+  background: #f5f5f5;
+  color: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.stats {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.stat-label {
+  font-size: 0.85em;
+  color: #888;
+  margin-top: 4px;
+}
+
+.clear-all-btn {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  color: #666;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.clear-all-btn:hover {
+  background: #f5f5f5;
+  color: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hook {
+  flex: 1;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.hook h1 {
+  font-size: 3em;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.hook p {
+  font-size: 1.2em;
+  color: #666;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* Form Section */
+.form-section {
+  padding: 40px 50px;
+  background: #fff;
+}
+
+.form-section h3 {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #1a1a1a;
+}
+
+.form-group {
+  display: flex;
+  gap: 15px;
+  align-items: end;
+}
+
+.input-group {
+  flex: 1;
+}
+
+label {
+  display: block;
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #fafafa;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #1a1a1a;
+  background: #fff;
+}
+
+.btn {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  height: fit-content;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+.empty-state {
+  text-align: center;
+  color: #999;
+  padding: 40px 0;
+  font-style: italic;
+}
